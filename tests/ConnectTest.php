@@ -1,27 +1,26 @@
 <?php
 /**
- * mithra62 - Unit Test
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @copyright	Copyright (c) 2015-2016, mithra62
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/tests/Validate/Rules/Ftp/ConnectTest.php
+ * @filesource 	./tests/ConnectTest.php
  */
-namespace mithra62\tests\Validate\Rules\Ftp;
+namespace JaegerApp\tests;
 
-use mithra62\tests\TestFixture;
-use mithra62\Validate;
-use mithra62\Validate\Rules\Ftp\Connect;
+use JaegerApp\Validate;
+use JaegerApp\Validate\Rules\Ftp\Connect;
 
 /**
- * mithra62 - Valiate object Unit Tests
+ * Jaeger - Valiate object Unit Tests
  *
  * Contains all the unit tests for the \mithra62\Valiate object
  *
- * @package mithra62\Tests
+ * @package Jaeger\Tests
  * @author Eric Lamb <eric@mithra62.com>
  */
-class ConnectTest extends TestFixture
+class ConnectTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -59,4 +58,14 @@ class ConnectTest extends TestFixture
         ));
         $this->assertFALSE($val->hasErrors());
     }
+
+    /**
+     * The FTP Test Credentials
+     *
+     * @return array
+     */
+    protected function getFtpCreds()
+    {
+        return include 'data/ftpcreds.config.php';
+    }    
 }

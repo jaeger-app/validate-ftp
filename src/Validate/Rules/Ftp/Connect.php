@@ -57,7 +57,7 @@ class Connect extends AbstractRule
                 return false;
             }
             
-            $filesystem = new Remote(FTP::getRemoteClient($params));
+            $filesystem = new Remote(Ftp::getRemoteClient($params));
             if (! $filesystem->getAdapter()->listContents()) {
                 return false;
             }

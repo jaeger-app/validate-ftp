@@ -59,7 +59,7 @@ class Writable extends AbstractRule
             }
             
             $local = new Remote(new Local(dirname($this->getTestFilePath())));
-            $filesystem = new Remote(FTP::getRemoteClient($params));
+            $filesystem = new Remote(Ftp::getRemoteClient($params));
             
             if ($local->has($this->test_file)) {
                 $contents = $local->read($this->test_file);
@@ -82,3 +82,6 @@ class Writable extends AbstractRule
         }
     }
 }
+
+$rule = new Writable;
+\JaegerApp\Validate::addrule($rule->getName(), array($rule, 'validate'), $rule->getErrorMessage());
