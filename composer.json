@@ -17,7 +17,11 @@
   "autoload" : {
     "psr-4" : {
       "JaegerApp\\" : "src"
-    }
+    },
+	"files": [
+		"src/Validate/Rules/Ftp/Connect.php", 
+		"src/Validate/Rules/Ftp/Writable.php"
+	]    
   },
   "license" : "MIT"
 }
